@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>맛집 상세 | 용문동 맛집</title>
+  <meta name="description" content="용문동 맛집 상세 정보" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- 네비게이션 바 -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="bi bi-bowl-hot-fill me-2 text-warning"></i>용문동 맛집
+      </a>
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navbarMain"
+              aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">홈</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#restaurants">맛집 목록</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">용문동 이야기</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html#contact">문의</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 상세 히어로 -->
+  <section class="detail-hero text-white d-flex align-items-end py-4">
+    <div class="container">
+      <a href="index.html" class="text-white text-decoration-none small opacity-75 d-inline-flex align-items-center mb-3">
+        <i class="bi bi-arrow-left me-1"></i> 맛집 목록으로
+      </a>
+      <div class="d-flex align-items-center gap-2 mb-2">
+        <span id="detail-badge-container"></span>
+        <span id="detail-stars-hero" class="text-warning small"></span>
+        <span id="detail-rating-num" class="text-white-50 small"></span>
+      </div>
+      <h1 id="detail-name" class="fw-bold mb-0"></h1>
+    </div>
+  </section>
+
+  <!-- 본문 콘텐츠 -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-5">
+
+        <!-- 왼쪽: 이미지 + 기본 정보 -->
+        <div class="col-lg-5">
+
+          <!-- 대표 이미지 -->
+          <div id="detail-img-wrap" class="detail-img-container mb-4">
+            <div class="detail-img-placeholder">
+              <i class="bi bi-house-heart-fill"></i>
+            </div>
+          </div>
+
+          <!-- 기본 정보 카드 -->
+          <div class="card info-card p-4">
+            <h5 class="fw-bold mb-3 pb-2 border-bottom">
+              <i class="bi bi-info-circle-fill text-warning me-2"></i>기본 정보
+            </h5>
+
+            <div class="info-item">
+              <span class="info-label"><i class="bi bi-geo-alt-fill me-1"></i>주소</span>
+              <span id="detail-address" class="info-value"></span>
+            </div>
+
+            <div class="info-item">
+              <span class="info-label"><i class="bi bi-clock-fill me-1"></i>영업시간</span>
+              <span id="detail-hours" class="info-value"></span>
+            </div>
+
+            <div class="info-item">
+              <span class="info-label"><i class="bi bi-star-fill me-1"></i>추천메뉴</span>
+              <span id="detail-menu-info" class="info-value"></span>
+            </div>
+
+            <div class="info-item">
+              <span class="info-label"><i class="bi bi-cash-coin me-1"></i>가격대</span>
+              <span id="detail-price" class="info-value"></span>
+            </div>
+
+            <div class="info-item">
+              <span class="info-label"><i class="bi bi-p-circle-fill me-1"></i>주차</span>
+              <span id="detail-parking" class="info-value"></span>
+            </div>
+
+            <div class="info-item">
+              <span class="info-label"><i class="bi bi-telephone-fill me-1"></i>전화</span>
+              <span id="detail-phone" class="info-value"></span>
+            </div>
+          </div>
+
+          <!-- 지도 영역 -->
+          <div class="mt-4">
+            <h6 class="fw-bold mb-2"><i class="bi bi-map-fill text-warning me-2"></i>위치</h6>
+            <div class="map-placeholder">
+              <i class="bi bi-map display-4 mb-2"></i>
+              <p class="small mb-1">지도를 여기에 삽입하세요</p>
+              <p class="small text-muted mb-2">엑셀 U열에 카카오맵 링크를 입력하세요</p>
+              <a id="detail-map-link" href="#" class="btn btn-sm btn-outline-secondary">
+                <i class="bi bi-box-arrow-up-right me-1"></i>카카오맵으로 보기
+              </a>
+            </div>
+          </div>
+
+        </div><!-- /col-lg-5 -->
+
+        <!-- 오른쪽: 방문 후기 -->
+        <div class="col-lg-7">
+
+          <!-- 방문 후기 -->
+          <div class="review-section p-4 mb-4">
+            <h5 class="fw-bold mb-3 pb-2 border-bottom">
+              <i class="bi bi-chat-quote-fill text-warning me-2"></i>방문 후기
+            </h5>
+
+            <p id="detail-visit-date" class="text-muted small mb-3"></p>
+
+            <div id="detail-review-text" class="review-text"></div>
+
+            <!-- 세부 별점 -->
+            <hr class="my-3" />
+            <div class="row text-center g-2">
+              <div class="col-4">
+                <small class="text-muted d-block mb-1">맛</small>
+                <span id="detail-stars-taste" class="text-warning"></span>
+              </div>
+              <div class="col-4">
+                <small class="text-muted d-block mb-1">가성비</small>
+                <span id="detail-stars-value" class="text-warning"></span>
+              </div>
+              <div class="col-4">
+                <small class="text-muted d-block mb-1">분위기</small>
+                <span id="detail-stars-mood" class="text-warning"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 이런 분께 추천 -->
+          <div id="detail-tags-card" class="card info-card p-4 mb-4">
+            <h5 class="fw-bold mb-3">
+              <i class="bi bi-person-check-fill text-warning me-2"></i>이런 분께 추천해요
+            </h5>
+            <div id="detail-tags" class="d-flex flex-wrap gap-2"></div>
+          </div>
+
+          <!-- 추가 사진 -->
+          <div class="card info-card p-4 mb-4">
+            <h5 class="fw-bold mb-3">
+              <i class="bi bi-images text-warning me-2"></i>사진 모음
+            </h5>
+            <div id="detail-photos" class="row g-2"></div>
+            <p class="text-muted small mt-2 mb-0">엑셀 T열에 파일명을 쉼표로 구분해 입력하세요. (images/ 폴더 기준)</p>
+          </div>
+
+          <!-- 방문 팁 -->
+          <div id="detail-tip-alert" class="alert alert-warning d-flex gap-3 align-items-start" role="alert">
+            <i class="bi bi-lightbulb-fill fs-5 mt-1 flex-shrink-0"></i>
+            <div>
+              <strong>방문 TIP</strong><br>
+              <small id="detail-tip-text"></small>
+            </div>
+          </div>
+
+        </div><!-- /col-lg-7 -->
+      </div><!-- /row -->
+    </div>
+  </section>
+
+  <!-- 관련 맛집 -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h5 class="fw-bold mb-4">
+        <i class="bi bi-compass-fill text-warning me-2"></i>함께 보면 좋은 맛집
+      </h5>
+      <div id="detail-related" class="row g-4"></div>
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="footer-section py-4 bg-dark text-white">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-2 mb-md-0">
+          <p class="mb-0 fw-bold">
+            <i class="bi bi-bowl-hot-fill me-2 text-warning"></i>용문동 맛집
+          </p>
+          <p class="text-muted small mb-0">대전 서구 용문동 주변 맛집을 직접 기록합니다.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p class="text-muted small mb-1">© 2025 용문동 맛집 기록</p>
+          <p class="text-muted small mb-0">
+            <a href="about.html" class="text-muted text-decoration-none me-3">블로그 소개</a>
+            <a href="about.html#contact" class="text-muted text-decoration-none">문의</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- 맛집 데이터 -->
+  <script src="data/restaurants.js"></script>
+  <!-- 상세 페이지 렌더링 -->
+  <script src="js/detail.js"></script>
+</body>
+</html>

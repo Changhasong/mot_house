@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>용문동 이야기 | 용문동 맛집 블로그</title>
+  <meta name="description" content="용문동 맛집 블로그 소개, 기록 이유, 광고/협찬 안내, 문의 방법" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ============================================================
+       네비게이션 바
+  ============================================================ -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="bi bi-bowl-hot-fill me-2 text-warning"></i>용문동 맛집
+      </a>
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navbarMain"
+              aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">홈</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#restaurants">맛집 목록</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">용문동 이야기</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">문의</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       About 히어로
+  ============================================================ -->
+  <section class="about-hero text-white d-flex align-items-center py-5">
+    <div class="container text-center">
+      <p class="hero-sub mb-2">블로그 소개</p>
+      <h1 class="fw-bold display-5 mb-2">용문동 이야기</h1>
+      <p class="lead opacity-85 mb-0">동네 맛집을 기록하는 이유</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       블로그 소개
+  ============================================================ -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-6">
+          <h2 class="fw-bold mb-4">이 블로그를 시작한 이유</h2>
+
+          <!-- [수정] 타임라인 항목을 블로그 시작 이야기로 바꾸세요 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"><i class="bi bi-dot"></i></div>
+            <h6 class="fw-bold mb-1">용문동과의 인연</h6>
+            <p class="text-muted small">
+              용문동에 이사 온 뒤 동네를 걸어다니며 숨겨진 맛집이 정말 많다는 걸 알게 됐습니다.
+              각종 사이트에서 거짓 정보에 지쳐 진짜 맛있는 맛집을 가지 못하고 있는 분들이 많다는 걸 느꼈습니다. 그래서 직접 방문한 곳만 기록하기로 했습니다.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"><i class="bi bi-dot"></i></div>
+            <h6 class="fw-bold mb-1">광고 없이, 진심으로</h6>
+            <p class="text-muted small">
+              광고나 협찬 없이 직접 지갑을 열고 방문한 곳만 소개합니다.
+              솔직한 후기로 용문동을 방문하는 분들과 주민들에게 도움이 되고자 합니다.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"><i class="bi bi-dot"></i></div>
+            <h6 class="fw-bold mb-1">기록의 의미</h6>
+            <p class="text-muted small">
+              오래된 가게들이 사라지기 전에 기록으로 남기고,
+              새로 생기는 맛집들도 꾸준히 소개해 용문동 맛집 지도를 완성해가겠습니다.
+            </p>
+          </div>
+
+        </div>
+        <div class="col-lg-6">
+          <!-- 블로그 소개 카드 -->
+          <div class="card border-0 shadow p-4 rounded-3">
+            <div class="text-center mb-4">
+              <!-- [수정] 블로거 이미지 또는 대표 이미지 -->
+              <div class="bg-warning bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                   style="width:90px;height:90px;">
+                <i class="bi bi-person-fill text-warning" style="font-size:3rem;"></i>
+              </div>
+              <!-- [수정] 블로거 닉네임 -->
+              <h5 class="fw-bold mb-1">용문동 탐식가</h5>
+              <!-- [수정] 한 줄 소개 -->
+              <p class="text-muted small">대전 서구 용문동 거주 | 맛집 탐방 중</p>
+            </div>
+            <ul class="list-unstyled small text-muted">
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>모든 방문은 개인 비용으로 진행</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>광고·협찬 시 반드시 명시</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>주관적 후기임을 전제로 작성</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>잘못된 정보는 수정 요청 환영</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       용문동 소개
+  ============================================================ -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <h2 class="fw-bold">용문동은 어떤 동네인가요?</h2>
+      </div>
+      <div class="row g-4">
+        <!-- [수정] 용문동 특징 카드들을 실제 내용으로 바꾸세요 -->
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm p-4 h-100 text-center rounded-3">
+            <div class="text-warning mb-3"><i class="bi bi-geo-alt-fill" style="font-size:2.5rem;"></i></div>
+            <h5 class="fw-bold mb-2">접근성</h5>
+            <p class="text-muted small mb-0">
+              대전 서구에 위치한 용문동은 지하철과 버스 노선이 잘 갖춰져 있어 대전 어디서든 접근이 편리합니다.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm p-4 h-100 text-center rounded-3">
+            <div class="text-warning mb-3"><i class="bi bi-house-heart-fill" style="font-size:2.5rem;"></i></div>
+            <h5 class="fw-bold mb-2">동네 분위기</h5>
+            <p class="text-muted small mb-0">
+              조용한 주거지와 상업 지역이 어우러진 용문동은 오래된 술집과 고깃집이 공존하는 매력적인 동네입니다.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm p-4 h-100 text-center rounded-3">
+            <div class="text-warning mb-3"><i class="bi bi-shop" style="font-size:2.5rem;"></i></div>
+            <h5 class="fw-bold mb-2">숨은 맛집</h5>
+            <p class="text-muted small mb-0">
+              SNS에 잘 알려지지 않았지만 수십 년의 역사를 가진 진짜 동네 맛집들이 골목마다 숨어 있습니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       광고/협찬 고지
+  ============================================================ -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h3 class="fw-bold mb-4 text-center">광고 및 협찬 안내</h3>
+
+          <!-- 고지 박스 -->
+          <div class="notice-box mb-4">
+            <h6 class="fw-bold mb-2"><i class="bi bi-exclamation-triangle-fill text-warning me-2"></i>광고/협찬 고지</h6>
+            <!-- [수정] 광고/협찬 정책 내용 -->
+            <p class="small text-muted mb-2">
+              이 블로그의 모든 후기는 <strong>개인 비용으로 직접 방문</strong>하여 작성된 것입니다.
+              협찬이나 광고를 받은 경우에는 해당 게시물에 <strong>[광고]</strong> 또는 <strong>[협찬]</strong> 표시를 명확히 합니다.
+            </p>
+            <p class="small text-muted mb-0">
+              광고 표시가 없는 모든 글은 순수 개인 방문 후기입니다.
+            </p>
+          </div>
+
+          <!-- 협찬 문의 -->
+          <div class="card border-0 shadow-sm p-4 rounded-3">
+            <h6 class="fw-bold mb-3">협찬/제휴 문의</h6>
+            <p class="text-muted small mb-3">
+              용문동 음식점 운영자 분 중 소개를 원하시는 분은 아래 방법으로 연락 주세요.
+              단, 광고 게시물은 반드시 <strong>[광고]</strong> 표기 후 게재됩니다.
+            </p>
+            <div class="d-flex gap-2 flex-wrap">
+              <!-- [수정] 이메일 -->
+    
+                <i class="bi bi-envelope-fill me-1"></i>mustbsm@gmail.com
+  
+              
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       문의 섹션
+  ============================================================ -->
+  <section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <h2 class="fw-bold">문의 안내</h2>
+        <p class="text-muted mt-3">잘못된 정보, 폐업 제보, 신규 맛집 추천 모두 환영합니다</p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+
+        <!-- 문의 카드 1: 이메일 -->
+        <div class="col-md-4">
+          <div class="contact-card p-4 text-center bg-white rounded-3">
+            <div class="text-warning mb-3">
+              <i class="bi bi-envelope-fill" style="font-size:2.5rem;"></i>
+            </div>
+            <h6 class="fw-bold mb-2">이메일</h6>
+            <p class="text-muted small mb-3">맛집 정보 제보 및 수정 요청</p>
+            <!-- [수정] 이메일 주소 -->
+              mustbsm@gmail.com
+            </a>
+          </div>
+        </div>
+
+
+      </div>
+
+      <!-- 추가 안내 -->
+      <div class="text-center mt-5">
+        <p class="text-muted small">
+          <i class="bi bi-info-circle me-1"></i>
+          폐업 또는 정보 오류 제보는 이메일 또는 오픈카톡으로 알려주시면 빠르게 수정하겠습니다.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       푸터
+  ============================================================ -->
+  <footer class="footer-section py-4 bg-dark text-white">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-2 mb-md-0">
+          <p class="mb-0 fw-bold">
+            <i class="bi bi-bowl-hot-fill me-2 text-warning"></i>용문동 맛집
+          </p>
+          <p class="text-muted small mb-0">대전 서구 용문동 주변 맛집을 직접 기록합니다.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p class="text-muted small mb-1">© 2025 용문동 맛집 기록</p>
+          <p class="text-muted small mb-0">
+            <a href="about.html" class="text-muted text-decoration-none me-3">블로그 소개</a>
+            <a href="#contact" class="text-muted text-decoration-none">문의</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>

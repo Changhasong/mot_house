@@ -1,0 +1,442 @@
+/* ================================================
+   용문동 맛집 블로그 - Custom Styles
+   Bootstrap 5 기반 커스텀 스타일
+================================================ */
+
+/* ========================
+   CSS 변수
+======================== */
+:root {
+  --primary:        #e67e22;
+  --primary-dark:   #d35400;
+  --primary-light:  #f39c12;
+  --bg-warm:        #fdf8f3;
+  --text-dark:      #2c2c2c;
+  --card-shadow:    0 2px 15px rgba(0, 0, 0, 0.08);
+  --card-shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.15);
+  --radius:         12px;
+}
+
+/* ========================
+   기본
+======================== */
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: var(--bg-warm);
+  color: var(--text-dark);
+}
+
+a {
+  color: var(--primary);
+}
+
+/* ========================
+   네비게이션
+======================== */
+.navbar-brand {
+  font-size: 1.25rem;
+  letter-spacing: -0.5px;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+  transition: color 0.2s;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: var(--primary-light) !important;
+}
+
+/* ========================
+   히어로 섹션
+======================== */
+.hero-section {
+  background: linear-gradient(135deg, #1a252f 0%, #c0392b 40%, #e67e22 75%, #f39c12 100%);
+  min-height: 62vh;
+}
+
+.hero-sub {
+  font-size: 1rem;
+  letter-spacing: 4px;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+/* ========================
+   카테고리 필터 버튼
+======================== */
+.btn-filter {
+  background: #fff;
+  border: 2px solid #dee2e6;
+  color: var(--text-dark);
+  border-radius: 50px;
+  padding: 6px 18px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-filter:hover {
+  background: var(--primary-light);
+  border-color: var(--primary-light);
+  color: #fff;
+}
+
+.btn-filter.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+/* ========================
+   섹션 헤더
+======================== */
+.section-header h2 {
+  font-size: 1.75rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 12px;
+}
+
+.section-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+/* ========================
+   맛집 카드
+======================== */
+.food-card {
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  background: #fff;
+}
+
+.food-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.food-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.food-img-placeholder {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.placeholder-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.85);
+  z-index: 1;
+}
+
+.placeholder-content i {
+  font-size: 3rem;
+  margin-bottom: 6px;
+}
+
+.placeholder-content span {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* ========================
+   뱃지 카테고리
+======================== */
+.badge-category {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  color: #fff;
+}
+
+.badge-korean  { background-color: #e74c3c; }
+.badge-chinese { background-color: #c0392b; }
+.badge-japanese{ background-color: #2980b9; }
+.badge-cafe    { background-color: #795548; }
+.badge-bar     { background-color: #8e44ad; }
+.badge-lunch   { background-color: #27ae60; }
+
+/* ========================
+   음식점 정보 텍스트
+======================== */
+.restaurant-info p {
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+/* ========================
+   카드 푸터 버튼
+======================== */
+.btn-outline-warning {
+  border-width: 2px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-warning:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+/* ========================
+   블로그 소개 통계 카드
+======================== */
+.intro-stat-card {
+  background: #fff;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.intro-stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.stat-icon i {
+  font-size: 2rem;
+}
+
+/* ========================
+   푸터
+======================== */
+.footer-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ========================
+   상세 페이지 - 히어로
+======================== */
+.detail-hero {
+  background: linear-gradient(135deg, #1a252f, #2c3e50);
+  min-height: 200px;
+}
+
+.detail-img-container {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--card-shadow-hover);
+}
+
+.detail-img-placeholder {
+  background: linear-gradient(135deg, #e8a87c, #e67e22);
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 5rem;
+}
+
+/* ========================
+   상세 정보 카드
+======================== */
+.info-card {
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.info-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.info-label {
+  min-width: 80px;
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 0.85rem;
+  padding-top: 2px;
+}
+
+.info-value {
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ========================
+   방문 후기
+======================== */
+.review-section {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+}
+
+.review-text {
+  line-height: 1.9;
+  color: #444;
+  font-size: 0.97rem;
+}
+
+/* ========================
+   추천 태그
+======================== */
+.tag-pill {
+  background: var(--bg-warm);
+  border: 1px solid #e0dcd7;
+  border-radius: 50px;
+  padding: 5px 14px;
+  font-size: 0.82rem;
+  color: var(--text-dark);
+  display: inline-block;
+}
+
+/* ========================
+   About 페이지
+======================== */
+.about-hero {
+  background: linear-gradient(135deg, #1a252f, #e67e22);
+  min-height: 280px;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 22px;
+  bottom: -16px;
+  width: 2px;
+  background: #dee2e6;
+}
+
+.timeline-item:last-child::before {
+  display: none;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 20px;
+  height: 20px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-dot i {
+  font-size: 0.6rem;
+  color: #fff;
+}
+
+.contact-card {
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.notice-box {
+  background: #fff8e1;
+  border-left: 4px solid var(--primary);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1.25rem 1.5rem;
+}
+
+/* ========================
+   지도 placeholder
+======================== */
+.map-placeholder {
+  background: #e9ecef;
+  border-radius: var(--radius);
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+  border: 2px dashed #ced4da;
+}
+
+/* ========================
+   반응형 조정
+======================== */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 52vh;
+  }
+
+  .hero-section .display-4 {
+    font-size: 1.75rem;
+  }
+
+  .detail-img-placeholder {
+    height: 240px;
+    font-size: 3.5rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.4rem;
+  }
+}
+
+/* ========================
+   카드 등장 애니메이션
+======================== */
+.restaurant-card {
+  animation: fadeInUp 0.45s ease both;
+}
+
+.restaurant-card:nth-child(2) { animation-delay: 0.05s; }
+.restaurant-card:nth-child(3) { animation-delay: 0.10s; }
+.restaurant-card:nth-child(4) { animation-delay: 0.15s; }
+.restaurant-card:nth-child(5) { animation-delay: 0.20s; }
+.restaurant-card:nth-child(6) { animation-delay: 0.25s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
