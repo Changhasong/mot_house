@@ -1,6 +1,7 @@
 # 용문동 맛집 블로그
 
-대전 서구 용문동 맛집을 소개하는 정적 HTML 블로그 사이트입니다.
+대전 서구 용문동 맛집을 소개하는 블로그 사이트입니다.  
+**Next.js 15** 기반으로 제작되었으며 **Vercel**을 통해 배포됩니다.
 
 ---
 
@@ -8,24 +9,28 @@
 
 ```
 yongmun-food-blog/
-├── index.html              ← 메인 페이지 (맛집 카드 목록)
-├── restaurant.html         ← 상세 페이지 (restaurant.html?id=N 형태로 동적 렌더링)
-├── about.html              ← 블로그 소개 & 문의 페이지
-│
-├── 맛집데이터.xlsx          ← ★ 맛집 정보 입력 파일 (여기만 수정!)
-├── 데이터변환.bat           ← ★ 더블클릭하면 웹사이트 자동 업데이트
-├── convert.py              ← 변환 스크립트 (bat 파일이 자동 실행)
-│
+├── app/
+│   ├── layout.js                ← 루트 레이아웃 (Navbar, Footer, Bootstrap)
+│   ├── page.js                  ← 홈 (히어로 + 카테고리 필터 + 카드 목록)
+│   ├── about/page.js            ← 소개 / 문의 페이지
+│   └── restaurant/[id]/page.js  ← 맛집 상세 페이지 (동적 라우트)
+├── components/
+│   ├── Navbar.js                ← 네비게이션 바
+│   ├── Footer.js                ← 푸터
+│   ├── BootstrapInit.js         ← Bootstrap JS 초기화 (클라이언트)
+│   ├── StarRating.js            ← 별점 컴포넌트
+│   ├── RestaurantCard.js        ← 맛집 카드
+│   ├── RestaurantGrid.js        ← 카테고리 필터 + 카드 목록 (클라이언트)
+│   └── RelatedRestaurants.js    ← 관련 맛집 목록
 ├── data/
-│   └── restaurants.js      ← 변환된 데이터 (convert.py가 자동 생성, 직접 수정 X)
-├── css/
-│   └── style.css           ← 커스텀 스타일 (Bootstrap 5 보완)
-├── js/
-│   ├── main.js             ← 메인 페이지: 카드 렌더링 + 카테고리 필터
-│   └── detail.js           ← 상세 페이지: 동적 렌더링 (restaurant.html용)
-├── images/
-│   └── placeholder.svg     ← 이미지 폴더 (음식점 사진을 여기에)
-└── README.md               ← 이 파일
+│   └── restaurants.json         ← 맛집 데이터 (convert.py가 자동 생성)
+├── public/
+│   └── images/                  ← 음식 사진 저장 위치
+├── styles/
+│   └── globals.css              ← 커스텀 CSS 스타일
+├── 맛집데이터.xlsx               ← 맛집 정보 입력 파일 (직접 수정)
+├── convert.py                   ← 엑셀 → JSON 변환 스크립트
+└── 데이터변환.bat                ← 변환 실행 스크립트 (더블클릭)
 ```
 
 ---
@@ -46,7 +51,7 @@ yongmun-food-blog/
 | D | **위치(짧게)** | 카드에 표시할 짧은 주소 |
 | E | **추천메뉴** | 쉼표로 구분 |
 | F | **별점** | 1~5 사이 숫자, 0.5 단위 |
-| G | **이미지파일** | `images/` 폴더 안의 파일명 (없으면 빈칸) |
+| G | **이미지파일** | `public/images/` 폴더 안의 파일명 (없으면 빈칸) |
 
 #### 상세 정보 (H~U열) — 상세 페이지에 표시
 
@@ -63,8 +68,8 @@ yongmun-food-blog/
 | P | **가성비별점** | 1~5 (0.5 단위) |
 | Q | **분위기별점** | 1~5 (0.5 단위) |
 | R | **방문팁** | 노란 알림박스에 표시 |
-| S | **추천태그** | 쉼표로 구분: `가성비 찾는 분, 점심 혼밥러` |
-| T | **추가사진** | 쉼표로 구분된 파일명 (images/ 폴더 기준) |
+| S | **추천태그** | 쉼표로 구분: `가성비, 혼밥, 데이트 코스` |
+| T | **추가사진** | 쉼표로 구분된 파일명 (`public/images/` 폴더 기준) |
 | U | **지도URL** | 카카오맵 / 네이버지도 공유 링크 |
 
 #### 카테고리 값
@@ -82,73 +87,110 @@ yongmun-food-blog/
 
 ### 2단계 — 변환 실행
 
-`데이터변환.bat`을 더블클릭합니다. 완료 메시지가 뜨면 성공입니다.
+`데이터변환.bat`을 더블클릭합니다. `data/restaurants.json`이 자동으로 업데이트됩니다.
 
 > **Python이 없을 경우:** https://python.org 에서 설치 후 "Add Python to PATH"를 반드시 체크하세요.
 
-### 3단계 — 브라우저 새로고침
+### 3단계 — 배포
 
-`index.html`을 열고 **F5**를 눌러 새로고침하면 변경 사항이 반영됩니다.
+```powershell
+git add data/restaurants.json
+git commit -m "맛집 추가: [음식점 이름]"
+git push
+```
+
+push하면 Vercel이 자동으로 감지해 재배포합니다.
 
 ---
 
-## 상세 페이지 동작 방식
+## 상세 페이지 URL 구조
 
-별도 HTML 파일을 만들 필요 없이 **`restaurant.html?id=N`** 방식으로 동작합니다.
+별도 HTML 파일 없이 **동적 라우트** 방식으로 동작합니다.
 
-- `restaurant.html?id=0` → 첫 번째 맛집 상세 페이지
-- `restaurant.html?id=1` → 두 번째 맛집 상세 페이지
+- `/restaurant/0` → 첫 번째 맛집 상세 페이지
+- `/restaurant/1` → 두 번째 맛집 상세 페이지
 - 카드의 **상세보기** 버튼이 자동으로 올바른 URL로 연결됩니다.
 
 ---
 
-## 실행 방법
+## 로컬 개발
 
-`index.html`을 브라우저로 직접 열면 됩니다. 서버 설치 불필요.
+```powershell
+# 의존성 설치 (최초 1회)
+npm install
 
+# 개발 서버 실행
+npm run dev
 ```
-index.html → 우클릭 → 브라우저로 열기
+
+브라우저에서 `http://localhost:3000` 으로 접속합니다.
+
+---
+
+## Vercel 배포 방법
+
+### 최초 배포
+
+1. [github.com](https://github.com) 에서 새 저장소 생성
+2. 로컬에서 push:
+   ```powershell
+   git init
+   git add .
+   git commit -m "initial commit"
+   git remote add origin https://github.com/계정명/저장소명.git
+   git push -u origin main
+   ```
+3. [vercel.com](https://vercel.com) 접속 → GitHub 로그인
+4. **Add New Project** → 저장소 선택 → **Deploy**
+
+Next.js 프로젝트를 자동으로 감지해 설정 없이 배포됩니다.
+
+### 이후 업데이트
+
+```powershell
+git add .
+git commit -m "업데이트 내용"
+git push
 ```
 
-VS Code의 **Live Server** 확장을 사용하면 저장 시 자동 새로고침됩니다.
+push할 때마다 Vercel이 자동으로 재빌드 및 재배포합니다.
 
 ---
 
 ## 이미지 추가 방법
 
-1. 음식점 사진을 `images/` 폴더에 복사합니다.
-   - 권장 크기: 가로 800px 이상, 파일명은 영문으로
-   - 예: `images/yongmun-gamasot.jpg`
-2. 엑셀에서 해당 음식점 행의 **G열(이미지파일)** 에 파일명을 입력합니다.
-   - 예: `yongmun-gamasot.jpg`
+1. 음식점 사진을 `public/images/` 폴더에 복사합니다.
+   - 권장 크기: 가로 800px 이상
+   - 파일명은 영문으로 작성 (예: `okdang-sundae.jpg`)
+2. 엑셀 **G열(이미지파일)** 에 파일명을 입력합니다.
+   - 예: `okdang-sundae.jpg`
 3. 추가 사진(상세 페이지용)은 **T열(추가사진)** 에 쉼표로 구분해 입력합니다.
-   - 예: `menu1.jpg, interior.jpg`
-4. `데이터변환.bat`을 실행하고 브라우저를 새로고침합니다.
+   - 예: `okdang-inside.jpg, okdang-menu.jpg`
+4. `데이터변환.bat` 실행 후 `git push`합니다.
 
 ---
 
 ## 사이트명 변경
 
-`index.html`, `restaurant.html`, `about.html` 각 파일에서 아래 부분을 찾아 변경합니다.
+[components/Navbar.js](components/Navbar.js) 와 [components/Footer.js](components/Footer.js) 에서 `용문동 맛집` 텍스트를 수정합니다.
 
-```html
-<a class="navbar-brand fw-bold" href="index.html">
-  <i class="bi bi-bowl-hot-fill me-2 text-warning"></i>용문동 맛집  ← 여기 변경
-</a>
+```jsx
+// components/Navbar.js
+<i className="bi bi-bowl-hot-fill me-2 text-warning"></i>용문동 맛집  ← 여기 변경
 ```
 
 ---
 
 ## 색상 테마 변경
 
-`css/style.css` 최상단의 CSS 변수를 수정합니다.
+[styles/globals.css](styles/globals.css) 최상단의 CSS 변수를 수정합니다.
 
 ```css
 :root {
-  --primary:        #e67e22;   /* 주색상 (버튼, 강조) */
-  --primary-dark:   #d35400;
-  --primary-light:  #f39c12;
-  --bg-warm:        #fdf8f3;   /* 페이지 배경색 */
+  --primary:       #e67e22;   /* 주색상 (버튼, 강조) */
+  --primary-dark:  #d35400;
+  --primary-light: #f39c12;
+  --bg-warm:       #fdf8f3;   /* 페이지 배경색 */
 }
 ```
 
@@ -156,9 +198,12 @@ VS Code의 **Live Server** 확장을 사용하면 저장 시 자동 새로고침
 
 ## 기술 스택
 
-- HTML5 / CSS3 (CSS Variables)
-- Bootstrap 5.3 (CDN)
-- Bootstrap Icons 1.11 (CDN)
-- Google Fonts — Noto Sans KR (CDN)
-- Vanilla JavaScript (카드 렌더링, 카테고리 필터, 상세 페이지 렌더링)
-- Python 3 + openpyxl (데이터 변환 스크립트)
+| 분류 | 기술 |
+|------|------|
+| 프레임워크 | Next.js 15 (App Router) |
+| UI 라이브러리 | React 19 |
+| CSS 프레임워크 | Bootstrap 5.3 (npm) |
+| 아이콘 | Bootstrap Icons 1.11 (npm) |
+| 폰트 | Google Fonts — Noto Sans KR |
+| 데이터 | JSON (Python + openpyxl로 엑셀 변환) |
+| 배포 | Vercel |
