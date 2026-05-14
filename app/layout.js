@@ -4,6 +4,7 @@ import '../styles/globals.css'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import BootstrapInit from '../components/BootstrapInit'
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata = {
   title: '용문동 맛집 기록 | 대전 서구 용문동 맛집 블로그',
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
         <main>{children}</main>
         <Footer />
         <BootstrapInit />
+        <Analytics />
       </body>
     </html>
   )
