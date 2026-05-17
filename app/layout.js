@@ -9,6 +9,9 @@ import { Analytics } from "@vercel/analytics/next"
 export const metadata = {
   title: '용문동 맛집 기록 | 대전 서구 용문동 맛집 블로그',
   description: '대전 서구 용문동 주변 맛집을 직접 발로 뛰며 기록하는 동네 맛집 블로그입니다.',
+  verification: {
+    google: 'M-iFTo5RAu2Xb5LOLXJu-3tPzdTj4FBD8S6ecbu4SCg',
+  },
 }
 
 export default function RootLayout({ children }) {
