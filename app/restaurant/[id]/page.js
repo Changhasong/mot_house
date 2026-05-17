@@ -31,7 +31,7 @@ function ReviewText({ text }) {
   return (
     <>
       {text.split(/\n\n+/).map((para, i) => (
-        <p key={i} dangerouslySetInnerHTML={{ __html: para.replace(/\n/g, '<br>') }} />
+        <p key={i} style={{ whiteSpace: 'pre-line' }}>{para}</p>
       ))}
     </>
   )
@@ -103,23 +103,26 @@ export default async function RestaurantDetail({ params }) {
                   <i className="bi bi-info-circle-fill text-warning me-2"></i>기본 정보
                 </h5>
                 {[
-                  { label: '주소',    icon: 'bi-geo-alt-fill',   value: r.address || r.location, html: true },
-                  { label: '영업시간', icon: 'bi-clock-fill',     value: r.hours || '정보 없음',   html: true },
-                  { label: '추천메뉴', icon: 'bi-star-fill',      value: r.menu   || '정보 없음',   html: true, transform: v => v.replace(/,\s*/g, '<br>') },
-                  { label: '가격대',  icon: 'bi-cash-coin',      value: r.price  || '정보 없음',   html: false },
-                  { label: '주차',    icon: 'bi-p-circle-fill',  value: r.parking|| '정보 없음',   html: false },
-                  { label: '전화',    icon: 'bi-telephone-fill', value: r.phone  || '정보 없음',   html: false },
+                  { label: '주소',    icon: 'bi-geo-alt-fill',   value: r.address || r.location, multiline: true },
+                  { label: '영업시간', icon: 'bi-clock-fill',     value: r.hours || '정보 없음',   multiline: true },
+                  { label: '추천메뉴', icon: 'bi-star-fill',      value: r.menu   || '정보 없음',   split: true },
+                  { label: '가격대',  icon: 'bi-cash-coin',      value: r.price  || '정보 없음' },
+                  { label: '주차',    icon: 'bi-p-circle-fill',  value: r.parking|| '정보 없음' },
+                  { label: '전화',    icon: 'bi-telephone-fill', value: r.phone  || '정보 없음' },
                 ].map(item => (
                   <div key={item.label} className="info-item">
                     <span className="info-label">
                       <i className={`bi ${item.icon} me-1`}></i>{item.label}
                     </span>
                     <span className="info-value">
-                      {item.html ? (
-                        <span dangerouslySetInnerHTML={{
-                          __html: (item.transform ? item.transform(item.value) : item.value).replace(/\n/g, '<br>')
-                        }} />
-                      ) : item.value}
+                      {item.split
+                        ? item.value.split(/,\s*/).map((v, i, arr) => (
+                            <span key={i}>{v}{i < arr.length - 1 && <br />}</span>
+                          ))
+                        : item.multiline
+                          ? <span style={{ whiteSpace: 'pre-line' }}>{item.value}</span>
+                          : item.value
+                      }
                     </span>
                   </div>
                 ))}
