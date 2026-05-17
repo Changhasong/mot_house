@@ -11,9 +11,9 @@
 yongmun-food-blog/
 ├── app/
 │   ├── layout.js                ← 루트 레이아웃 (Navbar, Footer, Bootstrap)
-│   ├── page.js                  ← 홈 (히어로 + 카테고리 필터 + 카드 목록)
-│   ├── about/page.js            ← 소개 / 문의 페이지
-│   └── restaurant/[id]/page.js  ← 맛집 상세 페이지 (동적 라우트)
+│   ├── page.js                  ← 홈 (히어로 + 쿠팡배너 + 카테고리 필터 + 카드 목록)
+│   ├── about/page.js            ← 소개 / 문의 페이지 (쿠팡배너 포함)
+│   └── restaurant/[id]/page.js  ← 맛집 상세 페이지 (쿠팡배너 포함)
 ├── components/
 │   ├── Navbar.js                ← 네비게이션 바
 │   ├── Footer.js                ← 푸터
@@ -21,7 +21,10 @@ yongmun-food-blog/
 │   ├── StarRating.js            ← 별점 컴포넌트
 │   ├── RestaurantCard.js        ← 맛집 카드
 │   ├── RestaurantGrid.js        ← 카테고리 필터 + 카드 목록 (클라이언트)
-│   └── RelatedRestaurants.js    ← 관련 맛집 목록
+│   ├── RelatedRestaurants.js    ← 관련 맛집 목록
+│   └── CoupangBanner.js         ← 쿠팡파트너스 배너 (공통 컴포넌트)
+├── lib/
+│   └── constants.js             ← 쿠팡파트너스 링크 등 전역 상수
 ├── data/
 │   └── restaurants.json         ← 맛집 데이터 (convert.py가 자동 생성)
 ├── public/
@@ -178,6 +181,29 @@ push할 때마다 Vercel이 자동으로 재빌드 및 재배포합니다.
 // components/Navbar.js
 <i className="bi bi-bowl-hot-fill me-2 text-warning"></i>용문동 맛집  ← 여기 변경
 ```
+
+---
+
+## 쿠팡파트너스 링크 변경
+
+쿠팡파트너스 링크는 **한 곳에서만** 수정하면 전체 페이지에 자동 반영됩니다.
+
+```js
+// lib/constants.js
+export const COUPANG_URL = 'https://link.coupang.com/a/여기에링크입력'
+```
+
+위 파일에서 URL을 본인의 쿠팡파트너스 링크로 교체하세요.
+
+배너는 다음 위치에 자동으로 표시됩니다:
+
+| 페이지 | 위치 |
+|--------|------|
+| 홈 | 히어로 섹션 아래, 맛집 목록 위 |
+| 맛집 상세 | 후기 본문 아래, 관련 맛집 위 |
+| 소개(About) | 광고/협찬 고지 섹션 내 |
+
+> **법적 고지**: 쿠팡파트너스 링크를 게시할 경우 "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다." 문구가 배너 하단에 자동으로 표시됩니다.
 
 ---
 

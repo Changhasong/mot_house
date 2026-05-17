@@ -1,3 +1,5 @@
+import CoupangBanner from '../../components/CoupangBanner'
+
 export const metadata = {
   title: '용문동 이야기 | 용문동 맛집 블로그',
   description: '용문동 맛집 블로그 소개, 기록 이유, 광고/협찬 안내, 문의 방법',
@@ -131,6 +133,8 @@ export default function About() {
                   광고 표시가 없는 모든 글은 순수 개인 방문 후기입니다.
                 </p>
               </div>
+              <CoupangBanner />
+
               <div className="card border-0 shadow-sm p-4 rounded-3">
                 <h6 className="fw-bold mb-3">협찬/제휴 문의</h6>
                 <p className="text-muted small mb-3">

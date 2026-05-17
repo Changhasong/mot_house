@@ -440,3 +440,60 @@ a {
     transform: translateY(0);
   }
 }
+
+/* ========================
+   쿠팡파트너스 배너
+======================== */
+.coupang-banner-wrap {
+  margin: 1.5rem 0;
+}
+
+.coupang-banner-link {
+  text-decoration: none;
+  display: block;
+}
+
+.coupang-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #e8320a, #ff6f42);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 14px 20px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.coupang-banner:hover {
+  opacity: 0.92;
+  transform: translateY(-2px);
+}
+
+.coupang-logo {
+  background: #fff;
+  color: #e8320a;
+  font-weight: 800;
+  font-size: 0.8rem;
+  padding: 3px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.coupang-text {
+  font-weight: 600;
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+.coupang-arrow {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.coupang-disclaimer {
+  font-size: 0.72rem;
+  color: #9e9e9e;
+  margin: 6px 2px 0;
+  line-height: 1.4;
+}

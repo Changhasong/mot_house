@@ -186,7 +186,8 @@ def parse_row(row):
         cats = ['korean']
 
     tags   = [t.strip() for t in tags_raw.split(',')   if t.strip()] if tags_raw   else []
-    photos = [p.strip() for p in photos_raw.split(',') if p.strip()] if photos_raw else []
+    photos = [p.strip() if '.' in p.strip() else p.strip() + '.jpg'
+              for p in photos_raw.split(',') if p.strip()] if photos_raw else []
 
     return {
         'name': name, 'category': cats, 'description': desc,

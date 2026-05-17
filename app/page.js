@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import RestaurantGrid from '../components/RestaurantGrid'
+import CoupangBanner from '../components/CoupangBanner'
 import restaurants from '../data/restaurants.json'
 
 export const metadata = {
@@ -19,6 +20,13 @@ export default function Home() {
           <a href="#restaurants" className="btn btn-warning btn-lg px-5 fw-bold shadow">
             맛집 둘러보기 <i className="bi bi-arrow-down ms-2"></i>
           </a>
+        </div>
+      </section>
+
+      {/* 쿠팡파트너스 */}
+      <section className="py-3 bg-light">
+        <div className="container">
+          <CoupangBanner />
         </div>
       </section>
 

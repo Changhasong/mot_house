@@ -3,6 +3,7 @@ import Link from 'next/link'
 import restaurants from '../../../data/restaurants.json'
 import StarRating from '../../../components/StarRating'
 import RelatedRestaurants from '../../../components/RelatedRestaurants'
+import CoupangBanner from '../../../components/CoupangBanner'
 
 const CAT_CFG = {
   korean:   { label: '한식',     badge: 'badge-korean',   icon: 'bi-fire',      color: '#c0392b' },
@@ -221,6 +222,13 @@ export default async function RestaurantDetail({ params }) {
               )}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* 쿠팡파트너스 */}
+      <section className="py-3">
+        <div className="container">
+          <CoupangBanner />
         </div>
       </section>
 
