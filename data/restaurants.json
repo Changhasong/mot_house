@@ -109,5 +109,42 @@
     ],
     "map_url": "https://map.naver.com/p/entry/place/1245143410?c=15.00,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202605172223&locale=ko&svcName=map_pcv5",
     "youtube_shorts": "https://youtube.com/shorts/6_egdy3bG9w?feature=share"
+  },
+  {
+    "name": "명량생조개손칼국수",
+    "category": [
+      "korean"
+    ],
+    "description": "물총칼국수 용문동 맛집입니다. 국물이 얼큰하면서도 시원한 칼국수입니다. 해장으로도 매우 좋습니다. 면도 진짜 식감이 장난 아닙니다. 그뿐만 아니라 두루치기랑 수육도 팝니다. 이것도 맛있어요. 그리고 파전도 유명합니다.",
+    "location": "대전 서구 용문동",
+    "menu": "물총칼국수, 해물파전, 두부두루치기, 수육",
+    "rating": 5.0,
+    "image": "merang.jpg",
+    "address": "대전 서구 용문동 [590-21]",
+    "hours": "일, 화, 수, 목, 금, 토 11:00~21:00\n월요일 정기 휴무",
+    "price": "10,000~15,000원",
+    "parking": "가게 앞 4자리 정도 있음.",
+    "phone": "042-535-0990",
+    "visit_date": "2026.05.20",
+    "review": "용문동에서 먹을 수 있는 물총칼국수로 어느 동네에서 먹었던 물총칼국수 만큼 맛있다. 특히, 여기 칼국수면은 진짜 쫄깃하고, 국물도 시원한것도 있지만 해장이 확실하게 잘된다. 주변에서 술마시고 다음날 일어나서 해장하고 싶다면 꼭 가보도록해라. 이보다 시원하고 맛있고 해장 잘되는 칼국수는 없다.",
+    "rating_taste": 5.0,
+    "rating_value": 5.0,
+    "rating_mood": 3.0,
+    "tip": "가게 앞에 4자리 정도 주차 장소가 있으니 편하게 오셔도 됩니다.",
+    "tags": [
+      "물총칼국수",
+      "두부두루치기",
+      "해물파전"
+    ],
+    "photos": [
+      "명량생조개1.jpg",
+      "명량생조개2.jpg",
+      "명량생조개3.jpg",
+      "명량생조개4.jpg",
+      "명량생조개5.jpg",
+      "멸량생조개6.jpg"
+    ],
+    "map_url": "https://map.naver.com/p/entry/place/16277892?c=19.36,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202605172328&locale=ko&svcName=map_pcv5",
+    "youtube_shorts": ""
   }
 ]
