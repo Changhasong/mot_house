@@ -165,7 +165,8 @@ def parse_row(row):
     location = col(row, 3, '대전 서구 용문동')
     menu     = col(row, 4)
     rating   = parse_rating(row, 5, 4.0)
-    image    = col(row, 6)
+    _img_raw = col(row, 6)
+    image    = (_img_raw if '.' in _img_raw else _img_raw + '.jpg') if _img_raw else ''
     address  = col(row, 7) or location
     hours    = col(row, 8)
     price    = col(row, 9)

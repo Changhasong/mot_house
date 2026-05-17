@@ -8,7 +8,7 @@
     "location": "대전 서구 용문동",
     "menu": "순대국밥, 곱창전골",
     "rating": 5.0,
-    "image": "",
+    "image": "oukdang.jpg",
     "address": "대전 서구 용문동 [263-31]",
     "hours": "평일/주말 24시간 영업\n연중 무휴",
     "price": "6,000~15,000원",
@@ -27,8 +27,12 @@
       "혼술",
       "순대"
     ],
-    "photos": [],
-    "map_url": ""
+    "photos": [
+      "옥당1.jpg",
+      "옥당2.jpg",
+      "옥당3.jpg"
+    ],
+    "map_url": "https://map.naver.com/p/search/%EC%98%A5%EB%8B%B9%EC%88%9C%EB%8C%80/place/1599860073?c=15.00,0,0,0,dh&isCorrectAnswer=true&placePath=/home?fromPanelNum=1&additionalHeight=76&timestamp=202605172222&locale=ko&svcName=map_pcv5&searchText=%EC%98%A5%EB%8B%B9%EC%88%9C%EB%8C%80&fromPanelNum=1&additionalHeight=76&timestamp=202605172222&locale=ko&svcName=map_pcv5&searchText=%EC%98%A5%EB%8B%B9%EC%88%9C%EB%8C%80"
   },
   {
     "name": "문문",
@@ -39,7 +43,7 @@
     "location": "대전 서구 용문동",
     "menu": "문문 하이볼",
     "rating": 5.0,
-    "image": "문문1.jpg",
+    "image": "moonmoon.jpg",
     "address": "대전 서구 용문동 [268-1]",
     "hours": "월,화,수,목,금,토 19:00~01:00\n일요일 휴무",
     "price": "10,000~30,000원",
@@ -68,5 +72,39 @@
       "문문8.jpg"
     ],
     "map_url": "https://map.naver.com/p/search/%EB%AC%B8%EB%AC%B8?c=15.00,0,0,0,dh"
+  },
+  {
+    "name": "모정득옛날고기집",
+    "category": [
+      "korean"
+    ],
+    "description": "살짝 양념되어 있는 소 갈비살을 파는 소고기 집으로, 고기도 맛있지만 사이드 메뉴도 정말 맛있는 집이다. 소고기 양도 많고 가격도 나쁘지 않다.",
+    "location": "대전 서구 용문동",
+    "menu": "소갈비살, 열무비빔밥",
+    "rating": 5.0,
+    "image": "mojung.jpg",
+    "address": "대전 서구 용문동 [590-30]",
+    "hours": "월, 화, 수, 목, 금, 토 16:00~01:00\n라스트 오더 00:30",
+    "price": "50,000원",
+    "parking": "주변 원룸촌 등에 주차",
+    "phone": "0507-1454-0092",
+    "visit_date": "2026.05.19",
+    "review": "용문동에는 맛있는 고깃집이 많습니다. 여기도 그 고깃집중 하나입니다. 특히, 소갈비살은 여기가 거의 유일하며, 소고기 먹고 싶을땐 꼭 여기로 옵니다. 소고기도 당연히 맛있지만 사이드 메뉴 중에 열무비빔밥이 정말 맛있습니다. 열무 비빔밥도 놓치지 마시고 꼭 드셔보세요.",
+    "rating_taste": 5.0,
+    "rating_value": 4.0,
+    "rating_mood": 3.0,
+    "tip": "용문동 내부는 주차하기가 어렵습니다. 주변 주차 할 수 있는 곳에 주차하시고 걸어 오는 것을 추천합니다.",
+    "tags": [
+      "소고기",
+      "소갈비살",
+      "열무비빔밥"
+    ],
+    "photos": [
+      "모정득1.jpg",
+      "모정득2.jpg",
+      "모정득3.jpg",
+      "모정득4.jpg"
+    ],
+    "map_url": "https://map.naver.com/p/entry/place/1245143410?c=15.00,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202605172223&locale=ko&svcName=map_pcv5"
   }
 ]
