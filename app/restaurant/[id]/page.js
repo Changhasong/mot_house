@@ -133,7 +133,7 @@ export default async function RestaurantDetail({ params }) {
                 <h6 className="fw-bold mb-2"><i className="bi bi-map-fill text-warning me-2"></i>위치</h6>
                 {r.map_url ? (
                   <a href={r.map_url} target="_blank" rel="noopener noreferrer" className="btn btn-warning w-100">
-                    <i className="bi bi-box-arrow-up-right me-1"></i>카카오맵으로 보기
+                    <i className="bi bi-box-arrow-up-right me-1"></i>네이버맵에서 보기
                   </a>
                 ) : (
                   <div className="map-placeholder">
@@ -194,26 +194,17 @@ export default async function RestaurantDetail({ params }) {
                   <i className="bi bi-images text-warning me-2"></i>사진 모음
                 </h5>
                 <div className="row g-2">
-                  {[0, 1, 2].map(i => (
+                  {Array.from({ length: 8 }, (_, i) => (
                     r.photos && r.photos[i] ? (
-                      <div key={i} className="col-4">
+                      <div key={i} className="col-6">
                         <img
                           src={`/images/${r.photos[i]}`}
                           className="img-fluid rounded"
-                          style={{ height: '100px', objectFit: 'cover', width: '100%' }}
+                          style={{ height: '200px', objectFit: 'cover', width: '100%' }}
                           alt={`${r.name} 사진`}
                         />
                       </div>
-                    ) : (
-                      <div key={i} className="col-4">
-                        <div
-                          className="bg-light rounded d-flex align-items-center justify-content-center text-muted"
-                          style={{ height: '100px' }}
-                        >
-                          <i className="bi bi-image display-6"></i>
-                        </div>
-                      </div>
-                    )
+                    ) : null
                   ))}
                 </div>
               </div>
