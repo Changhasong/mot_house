@@ -38,6 +38,31 @@ function ReviewText({ text }) {
   )
 }
 
+function getYoutubeEmbedUrl(url) {
+  if (!url) return ''
+
+  try {
+    const parsed = new URL(url)
+    const host = parsed.hostname.replace(/^www\./, '')
+    let videoId = ''
+
+    if (host === 'youtu.be') {
+      videoId = parsed.pathname.split('/').filter(Boolean)[0] || ''
+    } else if (host === 'youtube.com' || host === 'm.youtube.com') {
+      const parts = parsed.pathname.split('/').filter(Boolean)
+      if (parts[0] === 'shorts' || parts[0] === 'embed') {
+        videoId = parts[1] || ''
+      } else if (parts[0] === 'watch') {
+        videoId = parsed.searchParams.get('v') || ''
+      }
+    }
+
+    return videoId ? `https://www.youtube.com/embed/${videoId}` : ''
+  } catch {
+    return ''
+  }
+}
+
 export default async function RestaurantDetail({ params }) {
   const { id } = await params
   const idx = parseInt(id)
@@ -49,6 +74,7 @@ export default async function RestaurantDetail({ params }) {
   const r = restaurants[idx]
   const cats = Array.isArray(r.category) ? r.category : [r.category]
   const primary = CAT_CFG[cats[0]] || CAT_CFG.korean
+  const shortsEmbedUrl = getYoutubeEmbedUrl(r.youtube_shorts || r.youtube_url)
 
   return (
     <>
@@ -144,6 +170,22 @@ export default async function RestaurantDetail({ params }) {
                   </div>
                 )}
               </div>
+
+              {shortsEmbedUrl && (
+                <div className="mt-4">
+                  <h6 className="fw-bold mb-2">
+                    <i className="bi bi-play-btn-fill text-warning me-2"></i>YouTube Shorts
+                  </h6>
+                  <div className="shorts-embed">
+                    <iframe
+                      src={shortsEmbedUrl}
+                      title={`${r.name} YouTube Shorts`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    />
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* 오른쪽: 후기 */}

@@ -32,7 +32,8 @@
       "옥당2.jpg",
       "옥당3.jpg"
     ],
-    "map_url": "https://map.naver.com/p/search/%EC%98%A5%EB%8B%B9%EC%88%9C%EB%8C%80/place/1599860073?c=15.00,0,0,0,dh&isCorrectAnswer=true&placePath=/home?fromPanelNum=1&additionalHeight=76&timestamp=202605172222&locale=ko&svcName=map_pcv5&searchText=%EC%98%A5%EB%8B%B9%EC%88%9C%EB%8C%80&fromPanelNum=1&additionalHeight=76&timestamp=202605172222&locale=ko&svcName=map_pcv5&searchText=%EC%98%A5%EB%8B%B9%EC%88%9C%EB%8C%80"
+    "map_url": "https://map.naver.com/p/search/%EC%98%A5%EB%8B%B9%EC%88%9C%EB%8C%80/place/1599860073?c=15.00,0,0,0,dh&isCorrectAnswer=true&placePath=/home?fromPanelNum=1&additionalHeight=76&timestamp=202605172222&locale=ko&svcName=map_pcv5&searchText=%EC%98%A5%EB%8B%B9%EC%88%9C%EB%8C%80&fromPanelNum=1&additionalHeight=76&timestamp=202605172222&locale=ko&svcName=map_pcv5&searchText=%EC%98%A5%EB%8B%B9%EC%88%9C%EB%8C%80",
+    "youtube_shorts": "https://youtube.com/shorts/vyodnYktKqQ?feature=share"
   },
   {
     "name": "문문",
@@ -71,7 +72,8 @@
       "문문7.jpg",
       "문문8.jpg"
     ],
-    "map_url": "https://map.naver.com/p/search/%EB%AC%B8%EB%AC%B8?c=15.00,0,0,0,dh"
+    "map_url": "https://map.naver.com/p/search/%EB%AC%B8%EB%AC%B8?c=15.00,0,0,0,dh",
+    "youtube_shorts": ""
   },
   {
     "name": "모정득옛날고기집",
@@ -105,6 +107,7 @@
       "모정득3.jpg",
       "모정득4.jpg"
     ],
-    "map_url": "https://map.naver.com/p/entry/place/1245143410?c=15.00,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202605172223&locale=ko&svcName=map_pcv5"
+    "map_url": "https://map.naver.com/p/entry/place/1245143410?c=15.00,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202605172223&locale=ko&svcName=map_pcv5",
+    "youtube_shorts": ""
   }
 ]

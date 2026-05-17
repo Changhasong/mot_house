@@ -32,6 +32,7 @@ sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='repla
   S: 추천태그        쉼표로 구분: 가성비 찾는 분, 점심 혼밥러
   T: 추가사진        쉼표로 구분된 파일명 (images/ 폴더 기준)
   U: 지도URL         카카오맵 / 네이버지도 링크
+  V: YouTube Shorts URL
 """
 
 import os
@@ -50,6 +51,7 @@ HEADERS = [
     '방문일', '후기', '맛별점', '가성비별점', '분위기별점',
     '방문팁', '추천태그', '추가사진', '지도URL'
 ]
+HEADERS.append('YouTube Shorts URL')
 
 SAMPLE_ROWS = [
     [
@@ -181,6 +183,7 @@ def parse_row(row):
     tags_raw     = col(row, 18)
     photos_raw   = col(row, 19)
     map_url      = col(row, 20)
+    youtube_shorts = col(row, 21)
 
     cats = [c.strip() for c in cat_raw.split(',') if c.strip() in VALID_CATS]
     if not cats:
@@ -198,6 +201,7 @@ def parse_row(row):
         'review': review, 'rating_taste': rating_taste,
         'rating_value': rating_value, 'rating_mood': rating_mood,
         'tip': tip, 'tags': tags, 'photos': photos, 'map_url': map_url,
+        'youtube_shorts': youtube_shorts,
     }
 
 
@@ -255,6 +259,7 @@ def create_xlsx_template():
                   28, 28, 22, 22, 16,
                   14, 40, 8, 10, 10,
                   36, 30, 20, 28]
+    col_widths.append(28)
     for i, w in enumerate(col_widths, 1):
         ws.column_dimensions[ws.cell(1, i).column_letter].width = w
 
