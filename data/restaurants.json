@@ -184,5 +184,44 @@
     ],
     "map_url": "https://map.naver.com/p/search/%EC%A1%B0%EA%B8%B0%EC%A2%85%EC%9D%98%20%ED%96%A5%EB%AF%B8%EA%B0%81%20%EB%8C%80%EC%A0%84?c=15.44,0,0,0,dh",
     "youtube_shorts": "https://youtube.com/shorts/lGewMQ6ww88?feature=share"
+  },
+  {
+    "name": "만담꾼",
+    "category": [
+      "bar"
+    ],
+    "description": "용문동의 만담꾼은 한번 가면 당골이 될 수 밖에 없는 맛집이며 술집입니다. 다양한 메유와 좋은 분위기는 데이트하기에도 너무나도 좋습니다.",
+    "location": "대전 서구 용문동",
+    "menu": "모둠튀김, 각종 안주",
+    "rating": 5.0,
+    "image": "mandam.jpg",
+    "address": "대전 서구 용문동 [590-25]",
+    "hours": "매일 17:00~05:00\n라스트 오더 03:30",
+    "price": "20,000원",
+    "parking": "식당 앞 주차 불가능합니다. 주변 원룸촌에 주차하시거나 대중교통 타고오세요.",
+    "phone": "070-7585-5641",
+    "visit_date": "2026.04.25",
+    "review": "만담꾼의 안주는 모두 맛있다. 정말 자주가는 술집인데, 갈때마다 새로운 안주가 있어서 도전해보는 재미도 있다. 최근에 갔을때 먹었던 사이드 메뉴도 정말 맛있었다. 전복회 였던가. 아무튼 용문동 주변에서 살고 있다면 여길 안갈 수 없다. 꼭 친구 또는 연인과 함께 방문해보도록 하자.\n\n혹여나, 롯데백화점 성심당에 방문하고 술집을 찾는다면 만담꾼을 추천한다.",
+    "rating_taste": 5.0,
+    "rating_value": 5.0,
+    "rating_mood": 5.0,
+    "tip": "안주를 먹어보면 술을 마셔야 하니, 대중교통을 타고오는걸 추천합니다.",
+    "tags": [
+      "용문동 술집",
+      "맛집",
+      "만담꾼",
+      "튀김",
+      "다양한 안주"
+    ],
+    "photos": [
+      "만담꾼1.jpg",
+      "만담꾼.jpg",
+      "2.jpg",
+      "만담꾼3.jpg",
+      "만담꾼4.jpg",
+      "만담꾼5.jpg"
+    ],
+    "map_url": "https://map.naver.com/p/search/%EB%A7%8C%EB%8B%B4%EA%BE%BC?c=15.00,0,0,0,dh",
+    "youtube_shorts": ""
   }
 ]
