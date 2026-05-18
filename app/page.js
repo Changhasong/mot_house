@@ -14,7 +14,7 @@ export default function Home() {
       {/* 히어로 */}
       <section className="hero-section text-white d-flex align-items-center">
         <div className="container text-center py-5">
-          <p className="hero-sub mb-3">대전 서구 용문동</p>
+          <p className="hero-sub mb-3">대전 서구 용문동, 롯데백화점 성심당 주변 맛집</p>
           <h1 className="display-4 fw-bold mb-3">용문동 맛집 기록</h1>
           <p className="lead mb-4">직접 가보고 싶은 동네 맛집을 모아두는 블로그</p>
           <a href="#restaurants" className="btn btn-warning btn-lg px-5 fw-bold shadow">
@@ -44,7 +44,7 @@ export default function Home() {
                 광고 없이, 진심으로 맛있는 집들만 소개합니다.
               </p>
               <p className="text-muted mb-4">
-                용문동에 처음 오셨나요? 이 블로그를 들고 골목골목 탐방해보세요.
+                대전 롯데시네마 성심당 주변 맛집을 찾으시나요? 여기가 대전 서구 용문동입니다.
               </p>
               <Link href="/about" className="btn btn-dark px-4 fw-semibold">
                 <i className="bi bi-info-circle me-2"></i>블로그 소개 보기
